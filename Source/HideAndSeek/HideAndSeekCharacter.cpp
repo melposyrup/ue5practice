@@ -119,7 +119,6 @@ void AHideAndSeekCharacter::Tick(float DeltaTime)
 	}
 }
 
-
 #pragma region Input
 
 void AHideAndSeekCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
@@ -279,7 +278,6 @@ void AHideAndSeekCharacter::JumpToStopClimbing(const FInputActionValue& Value)
 #pragma endregion
 
 
-
 #pragma region Process Score and UI
 
 void AHideAndSeekCharacter::AddScore()
@@ -301,7 +299,7 @@ void AHideAndSeekCharacter::InitializeSlashOverlay()
 	PlayerController = Cast<APlayerController>(GetController());
 	if (!PlayerController) return;
 
-	HNSHUD = Cast<AHNSHUD>(PlayerController->GetHUD());
+	AHNSHUD* HNSHUD = Cast<AHNSHUD>(PlayerController->GetHUD());
 	if (!HNSHUD) return;
 
 	Overlay = HNSHUD->GetHNSOverlay();
@@ -360,6 +358,7 @@ void AHideAndSeekCharacter::UseMouseCursor(bool bUseMouse)
 
 #pragma endregion
 
+
 #pragma region Sound
 
 void AHideAndSeekCharacter::PlayInteractSound(bool bPlay)
@@ -383,4 +382,5 @@ void AHideAndSeekCharacter::PlayInteractSound(bool bPlay)
 		AudioComponent->Stop();
 	}
 }
+
 #pragma endregion

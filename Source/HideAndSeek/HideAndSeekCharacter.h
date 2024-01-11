@@ -12,7 +12,6 @@ class UPlayerInteraction;
 class AHNSPawnTarget;
 class UPlayerAttributes;
 class APlayerController;
-class AHNSHUD;
 class UHNSOverlay;
 class USoundBase;
 class UAudioComponent;
@@ -74,9 +73,6 @@ private:
 	/** Overlay */
 	UPROPERTY()
 	APlayerController* PlayerController;
-
-	UPROPERTY()
-	AHNSHUD* HNSHUD;
 
 	UPROPERTY()
 	UHNSOverlay* Overlay;
